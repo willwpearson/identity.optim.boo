@@ -1,0 +1,11 @@
+{
+    "functions": {
+        "src/**/*.cs": {
+            "runtime": "dotnet3.1",
+            "memory": 512
+        }
+    },
+    "routes": [
+        { "src": "/(.*)", "dest": "/api/$1" }
+    ]
+}
