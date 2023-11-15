@@ -6,7 +6,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://identity.optim.boo"
+      "applicationUrl": "http://localhost:5001"
     }
   }
 }
