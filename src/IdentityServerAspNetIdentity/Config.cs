@@ -68,6 +68,17 @@ public static class Config
                     "profile",
                     "api1"
                 }
+            },
+            // Registration Client
+            new Client
+            {
+                ClientId = "registration-client",
+                ClientName = "Registration Client",
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                ClientSecrets = { new Secret("registration-secret".Sha256()) },
+                AllowedScopes = { "openid", "profile", "api1" },
+                AllowedCorsOrigins = { "http://localhost:3000" },
+                // Add more configuration as needed
             }
         };
 }
