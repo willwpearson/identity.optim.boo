@@ -4,6 +4,7 @@ using IdentityServerAspNetIdentity.Data;
 using IdentityServerAspNetIdentity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using Serilog;
 
 namespace IdentityServerAspNetIdentity;
@@ -38,14 +39,14 @@ internal static class HostingExtensions
             .AddAspNetIdentity<ApplicationUser>();
         
         // Configure CORS
-        builder.Services.AddSingleton<ICorsPolicyService>((container)=>
+        builder.Services.AddCors(options =>
         {
-            var logger = container.GetRequiredService<ILogger<DefaultCorsPolicyService>>();
-
-            return new DefaultCorsPolicyService(logger)
+            options.AddPolicy(name: "SpecificOrigin", policy =>
             {
-                AllowedOrigins = { "http://localhost:3000" }
-            };
+                policy.WithOrigins("https://optim.boo")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
         });
 
         builder.Services.AddAuthentication()
@@ -72,9 +73,12 @@ internal static class HostingExtensions
             app.UseDeveloperExceptionPage();
         }
 
+        // app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
 
+        app.UseCors("SpecificOrigin");
+        
         app.UseIdentityServer();
         app.UseAuthorization();
         

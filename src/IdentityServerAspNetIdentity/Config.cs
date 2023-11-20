@@ -57,10 +57,10 @@ public static class Config
 
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
-                RedirectUris = { "http://localhost:3000/api/auth/callback/credentials" },
+                RedirectUris = { "https://optim.boo/api/auth/callback/credentials" },
 
-                PostLogoutRedirectUris = { "http://localhost:3000" },
-                AllowedCorsOrigins = { "http://localhost:3000" },
+                PostLogoutRedirectUris = { "https://optim.boo" },
+                AllowedCorsOrigins = { "https://optim.boo" },
 
                 AllowOfflineAccess = true,
                 AllowedScopes = { 
@@ -68,17 +68,6 @@ public static class Config
                     "profile",
                     "api1"
                 }
-            },
-            // Registration Client
-            new Client
-            {
-                ClientId = "registration-client",
-                ClientName = "Registration Client",
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
-                ClientSecrets = { new Secret("registration-secret".Sha256()) },
-                AllowedScopes = { "openid", "profile", "api1" },
-                AllowedCorsOrigins = { "http://localhost:3000" },
-                // Add more configuration as needed
             }
         };
 }
