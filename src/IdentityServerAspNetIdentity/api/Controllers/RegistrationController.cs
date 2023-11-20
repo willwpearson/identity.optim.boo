@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using IdentityServerAspNetIdentity.Models;
 using IdentityServerAspNetIdentity.Data;
@@ -33,7 +34,9 @@ public class RegistrationController : ControllerBase
         var newUser = new ApplicationUser
         {
             UserName =  request.UserName,
+            NormalizedUserName = request.UserName.ToUpper(),
             Email = request.Email,
+            NormalizedEmail = request.Email.ToUpper(),
             PasswordHash = HashPassword(request.Password),
         };
 
@@ -46,6 +49,8 @@ public class RegistrationController : ControllerBase
 
     private string HashPassword(string password)
     {
-        return password;
+        PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
+
+        return passwordHasher.HashPassword(null, password);
     }
 }

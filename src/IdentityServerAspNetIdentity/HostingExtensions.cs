@@ -43,7 +43,7 @@ internal static class HostingExtensions
         {
             options.AddPolicy(name: "SpecificOrigin", policy =>
             {
-                policy.WithOrigins("https://optim.boo")
+                policy.WithOrigins("http://localhost:3000", "https://optim.boo")
                     .AllowAnyHeader()
                     .AllowAnyMethod();
             });
@@ -84,6 +84,9 @@ internal static class HostingExtensions
         
         app.MapRazorPages()
             .RequireAuthorization();
+
+        app.MapControllers()
+            .RequireCors("SpecificOrigin");
 
         return app;
     }
