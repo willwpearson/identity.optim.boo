@@ -4,6 +4,8 @@ IdentityServer for optim.boo
 
 This project is setup using a default template from Duende, and configured to accept the Next.js client running on optim.boo.
 
+It is hosted on Fly.io, with DNS configured using Cloudflare.
+
 ## Setup the Default Template
 
 Here are the steps followed to set up the default template:
