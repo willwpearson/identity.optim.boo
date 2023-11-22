@@ -10,7 +10,7 @@ This is documentation describing how to configure this IdentityServer project to
 2. [Registration](#registration)
 3. [Next.js Configuration](#nextjs-configuration)
 
-### Login
+## Login
 
 If you want to set up a Next.js client to authenticate for login, there are a few files that need to be configured.
 
@@ -69,7 +69,7 @@ app.UseCors("SpecificOrigin");
 
 The IdentityServer should now be set up to properly accept and handle incoming login requests from the Next.js Client.
 
-### Registration
+## Registration
 
 In order to handle registering a new user to the database through the IdentityServer, we need to create an API endpoint on the IdentityServer to handle incoming registration requests.
 
@@ -173,6 +173,6 @@ app.MapControllers()
 
 Now the IdentityServer should be configured to accept incoming requests to the API registration endpoint from the Next.js client.
 
-### Next.js Configuration
+## Next.js Configuration
 
 If you want to configure a Next.js client to send login and registration requests to an IdentityServer, follow the documentation [here](https://github.com/willwpearson/optim.boo/tree/main).
