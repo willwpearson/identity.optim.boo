@@ -2,9 +2,9 @@
 
 IdentityServer for optim.boo
 
-## Setup
-
 This project is setup using a default template from Duende, and configured to accept the Next.js client running on optim.boo.
+
+## Setup the Default Template
 
 Here are the steps followed to set up the default template:
 
