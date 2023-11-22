@@ -33,3 +33,5 @@ dotnet sln add IdentityServerAspNetIdentity/IdentityServerAspNetIdentity.csproj
 The CLI will prompt if you want to seed the data. If you want to use the default SQLite database, choose Yes. Otherwise, choose No. If you choose No, you will have to update the "ConnectionStrings" in the `applicationsettings.json` file to point to the database you are using.
 
 That's it! The IdentityServer template is set up and ready to be configured for the clients you need to authenticate.
+
+See the documentation [here](documentation) to configure specific clients.
