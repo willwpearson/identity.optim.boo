@@ -162,7 +162,7 @@ public class RegistrationController : ControllerBase
 
 This controller takes the current database context, and using the incoming request, validates and creates a new user and adds it to the database.
 
-*This uses the default SQLite database given with the template. If using a different database for users, the controller may need to be configured further.*
+*This uses the default SQLite database given with the template. If you're using a different database for users, the controller may need to be configured further.*
 
 Lastly, we need to guarantee that the API endpoints accept incoming requests from the specified origins, so we need to add the following to the middleware pipeline in the `HostingExtensions.cs` file:
 
