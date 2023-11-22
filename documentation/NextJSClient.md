@@ -175,4 +175,4 @@ Now the IdentityServer should be configured to accept incoming requests to the A
 
 ## Next.js Configuration
 
-If you want to configure a Next.js client to send login and registration requests to an IdentityServer, follow the documentation [here](https://github.com/willwpearson/optim.boo/tree/main).
+If you want to configure a Next.js client to send login and registration requests to an IdentityServer, follow the documentation [here](https://github.com/willwpearson/optim.boo/blob/main/documentation/Authenticating%20with%20IdentityServer.md).
